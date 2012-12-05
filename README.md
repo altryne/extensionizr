@@ -13,7 +13,7 @@ Why does this exist?
 --------------------
 Because I got super tired creating the file structure for a new extension over and over again. 
 Extensionizr will be always updated with the latest chrome manifest changes. 
-In addition, I wanted to create a client-side only tool. Extensionizr doesn't user server side code! Don't believe me? Checkout the github repo.
+In addition, I wanted to create a client-side only tool. Extensionizr doesn't use server side code! Don't believe me? Checkout the github repo.
 
 Based on open source
 --------------------
