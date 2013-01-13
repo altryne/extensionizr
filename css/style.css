@@ -150,9 +150,9 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 		color:white;
 		font-weight:bold;
 		font-style:italic;
-		
+
 	}
-	
+
 	#badges li{
 		float:left;
 		background:#eee;
@@ -168,15 +168,15 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
 		text-shadow:0 2px 1px white;
 		box-shadow:1px 1px 1px rgba(0, 0, 0, 0.4);
 	}
-	
+
 	#badges li:first-child{
 		margin-left:0;
 	}
-	
+
 	.badge-label{
 		margin-top:26px;
 	}
-	
+
 	#badges ul{
 		float:right;
 		margin:0;
@@ -412,6 +412,11 @@ textarea{
 #download-section a:active{
 	background: rgb(33, 97, 157);
 }
+
+#gen-link.loading {
+	cursor: progress;
+}
+
 #about-container{
 	background:#eee;
 	padding:30px 0;
@@ -469,7 +474,7 @@ textarea{
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
@@ -493,8 +498,8 @@ textarea{
 		text-align:left;
 		height:133px;
 	}
-	
-	
+
+
 	.ie7 #header-container header,
 	.ie8 #header-container header{
 		height:auto;
@@ -510,7 +515,7 @@ textarea{
 		float:left;
 		width:63%;
 	}
-	
+
 	#html5-logo-container{
 		float:left;
 		width:0;
@@ -533,7 +538,7 @@ textarea{
 	.ie7 #follow-iframes-container iframe{
 		width:135px!important;
 	}
-	
+
 
 	#follow-container{
 		float:right;
@@ -547,9 +552,9 @@ textarea{
 		font-weight:bold;
 		margin:12px 0;
 	}
-	
 
-	
+
+
 	#follow-container a{
 		color:white;
 	}
@@ -592,28 +597,28 @@ textarea{
 		float:left;
 		width:50%;
 	}
-	
+
 	.customize-section:nth-child(2n + 1){
 		clear:both;
 	}
-	
+
 	.second-h5bp-label{
 		display:block;
 	}
-	
+
 	#download-section a{
 		width:48%;
 	}
-	
+
 	#download-section a:first-child{
 		margin:0 auto;
 	}
-	
+
 	#about-container{
 		-webkit-box-shadow:	inset 0 10px 15px rgba(0, 0, 0, 0.1);
 		   -moz-box-shadow:	inset 0 10px 15px rgba(0, 0, 0, 0.1);
 		        box-shadow:	inset 0 10px 15px rgba(0, 0, 0, 0.1);
-	
+
 	}
 
 	#about-container article{
@@ -629,12 +634,12 @@ textarea{
 		float:left;
 		display:block;
 	}
-	
+
 	#github-repositories{
 		float:right;
 		margin-top:20px;
 	}
-	
+
 	#github-repositories h3{
 		text-align:center;
 	}
@@ -647,7 +652,7 @@ textarea{
 		float:left;
 		width:40%;
 	}
-	
+
 	#html5-logo-container{
 		display:block;
 		float:left;
@@ -672,11 +677,11 @@ textarea{
 		float:right;
 		width:40%;
 	}
-	
+
 	#follow-container p:before{
 		content:"By ";
 	}
-	
+
 	#follow-iframes-container iframe{
  		/*float:left;*/
 		/*width:auto!important;*/
@@ -697,13 +702,13 @@ textarea{
 		float: left;
 		width:100px !important;
 	}
-	
+
 	.ie9 #follow-iframes-container iframe,
 	.ie8 #follow-iframes-container iframe,
 	.ie7 #follow-iframes-container iframe{
 		width:auto!important;
 	}
-	
+
 	#intro p{
 /* 		width:56%; */
 	}
@@ -741,15 +746,15 @@ textarea{
 	.first-h5bp-label{
 		visibility:hidden;
 	}
-	
+
 	.second-h5bp-label{
 		visibility:visible;
 	}
-	
+
 	.third-h5bp-label{
 		display:block;
 	}
-	
+
 
 
 	.customize-section{
@@ -759,7 +764,7 @@ textarea{
 	.customize-section:nth-child(2n + 1){
 		clear:none;
 	}
-	
+
 	.customize-section:nth-child(3n + 1){
 		clear:both;
 	}
@@ -858,7 +863,7 @@ h1 a{
    Print styles.
    Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
- 
+
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
   a, a:visited { color: #444 !important; text-decoration: underline; }

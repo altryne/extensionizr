@@ -28,11 +28,11 @@ $(function(){
 			]
 		}
 	};
-	
+
 	/************
 	   VARIABLES
 	 ************/
-	
+
 	var params;
 	var modules = [];
 	var dirs_to_remove = [];
@@ -41,7 +41,7 @@ $(function(){
 
 	/**********
 	   EVENTS
-	 **********/	
+	 **********/
 
 	$('input').click(function(){
 		update();
@@ -52,7 +52,7 @@ $(function(){
 		update();
 	});
 
-	
+
 	$('#preconfig-blank').click(function(){
 		fillDefaultModules('blank');
 		_gaq.push(['_trackEvent', 'Buttons', "preconfig-blank"]);
@@ -62,12 +62,12 @@ $(function(){
 		fillDefaultModules('page_action');
 		_gaq.push(['_trackEvent', 'Buttons', "preconfig-page"]);
 	});
-	
+
 	$('#preconfig-browser').click(function(){
 		fillDefaultModules('browser_action');
 		_gaq.push(['_trackEvent', 'Buttons', "preconfig-browser"]);
 	});
-	
+
 	/*********
 	   LOGIC
 	 *********/
@@ -91,11 +91,11 @@ $(function(){
 		update();
 		$('#hidden-section').fadeIn('slow');
 	}
-	
+
 	function update(){
 		updateModules();
 	}
-	
+
 	function updateModules(){
 		modules = [];
 		permissions = [];
@@ -266,7 +266,7 @@ $(function(){
 	/***********
 	   HELPERS
 	 ***********/
-	
+
 	if (!Array.indexOf){
 		Array.prototype.indexOf = function(searchedElement){
 			for (var i = 0; i < this.length; i++){
@@ -282,13 +282,13 @@ $(function(){
 			return (i > -1) ? true : false;
 		}
 	}
-	
+
 	Array.prototype.remove = function(searchedElement){
 		var i = this.indexOf(searchedElement);
 		if (i != -1)
 			this.splice(i, 1);
 	};
-	
+
 	/***********
 	    MAIN
 	 ***********/
@@ -340,7 +340,7 @@ $(function(){
 		console.error(message);
 	}
 
-	zip.workerScriptsPath = "/zip/";
+	zip.workerScriptsPath = "zip/";
 	imported_zip_root = "ext/";
 
 	function importZip(callback){
@@ -378,9 +378,9 @@ $(function(){
 			zipFs.remove(manifestFs);
 			//write new manifest to filesystem API
 			extFs.addText('manifest.json', manifestJson);
-			genButton.html('Generating download!');
+			genButton.html('Generating download!').addClass('loading');
 			zipFs.exportData64URI(function (data) {
-				genButton.html('Download ready!');
+				genButton.html('Download ready!').removeClass('loading');
 
 				var clickEvent = document.createEvent("MouseEvent");
 				clickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
@@ -391,6 +391,8 @@ $(function(){
 				event.preventDefault();
 				return false;
 
+			}, $.noop, function(){
+				genButton.html('Something went wrong').removeClass('loading');
 			});
 		}else{
 			//redownload
@@ -401,5 +403,5 @@ $(function(){
 			return false;
 		}
 	}
-	
+
 });
