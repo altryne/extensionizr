@@ -389,12 +389,12 @@ $(function(){
 			//write new manifest to filesystem API
 			extFs.addText('manifest.json', manifestJson);
 			genButton.html('Generating download!').addClass('loading');
-			zipFs.exportData64URI(function (data) {
+			zipFs.exportBlob(function (data) {
 				genButton.html('Download ready!').removeClass('loading');
 
 				var clickEvent = document.createEvent("MouseEvent");
 				clickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-				downloadButton.href = data;
+				downloadButton.href = (window.URL || window.webkitURL).createObjectURL(data);
 				_gaq.push(['_trackEvent', 'Buttons', "download-button"]);
 				downloadButton.download = 'extensionizr_custom' + Date.now() + '.zip';
 				downloadButton.dispatchEvent(clickEvent);
